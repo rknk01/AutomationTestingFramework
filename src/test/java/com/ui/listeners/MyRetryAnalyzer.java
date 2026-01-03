@@ -8,10 +8,11 @@ import com.utility.JSONUtility;
 
 public class MyRetryAnalyzer implements IRetryAnalyzer{
 	private static final int MAX_NO_OF_ATTEMPS=JSONUtility.readJSON(Env.QA).getMAX_NO_OF_ATTEMPS();
-	int currentAttemp=1;
+	int currentAttempt=1;
+	//Function
 	public boolean retry(ITestResult result) {
-		if(currentAttemp<=MAX_NO_OF_ATTEMPS) {
-			currentAttemp++;
+		if(currentAttempt<=MAX_NO_OF_ATTEMPS) {
+			currentAttempt++;
 			return true;
 		}
 		return false;
