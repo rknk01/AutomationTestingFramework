@@ -19,6 +19,7 @@ public class LoginTest extends TestBase {
 		String userName=homePage.goToLogInPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUserName();
 		assertEquals(userName, "James Bond");
 		
+		
 	}
 	
 	
