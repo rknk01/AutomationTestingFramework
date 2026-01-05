@@ -62,7 +62,7 @@ jobs:
       if: always()
       uses: JamesIves/github-pages-deploy-action/@v4
       with:
-        name: public/extent-reports
+        folder: public/extent-reports
         token: ${{secrets.PAT}}
         clean: true
         
