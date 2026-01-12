@@ -25,7 +25,7 @@ public class TestBase {
 	public void setUp(
 			@Optional("chrome") String browser, 
 			@Optional("false") boolean isLamdaTest, 
-			@Optional("true")boolean isHeadless,ITestResult result) {
+			@Optional("false")boolean isHeadless,ITestResult result) {
 		WebDriver lambdaDriver;
 		this.isLamdaTest=isLamdaTest;
 		if(isLamdaTest) {
@@ -42,14 +42,18 @@ public class TestBase {
 		return homePage;
 	}
 	
-	@AfterMethod(description="Tear down the browser")
-	public void tearDown() {
-		if(isLamdaTest) {
-			LambdaTestUtility.quitSession();
-		}
-		else {
-			homePage.quit();
-		}
-	}
+	
+	  @AfterMethod(description="Tear down the browser") 
+	  public void tearDown() {
+		  if(isLamdaTest) 
+		  { 
+			  LambdaTestUtility.quitSession(); 
+		  } 
+		  else { 
+			  homePage.quit();
+		  } 
+	  
+	 }
+	 
 	
 }
